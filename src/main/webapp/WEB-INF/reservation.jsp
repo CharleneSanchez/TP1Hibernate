@@ -18,21 +18,32 @@
 <body>
 
 <form method="post">
-		
 		<div class="mb-3">
-			<label for="inputidClient" class="form-label">Entrer l'id Client</label>
+			<label for="pc" class="form-label">Deja client ? </label> <br/>
+			<input type="radio" name="pc" value="client">Oui
+			<input type="radio" name="pc" value="passager">Non
+		
+		</div>
+		<div class="mb-3">
+			<label for="idClient" class="form-label">Entrer l'id Client</label>
 			<input type="text" name="idClient" class="form-control"id="inputidClient">
 		</div>
-		
+		<div class="mb-3">
+			<label for="nom" class="form-label">Nom :</label> 
+			<input type="text" name="nom" class="form-control">
+		</div>
+		<br/><br/>
+		<div class="mb-3">
+			<label for="nom" class="form-label">Prenom :</label> 
+			<input type="text" name="prenom" class="form-control">
+		</div>
+		<br/><br/>
 		<div class="mb-3">
 			<label for="inputNumVol" class="form-label">Entrer le numéro du vol</label>
 			<input type="text" name="numVol" class="form-control"id="inputNumVol">
 		</div>
 		
-		<div class="mb-3">
-			<label for="inputidPassager" class="form-label">Entrer l'id Passager</label>
-			<input type="text" name="idPassager" class="form-control"id="inputidPassager">
-		</div>
+		
 	
 		
 		<button type="submit" class="btn btn-primary">Envoyer</button>

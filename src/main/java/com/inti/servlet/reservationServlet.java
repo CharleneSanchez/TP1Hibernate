@@ -49,17 +49,29 @@ public class reservationServlet extends HttpServlet {
 		try {
 			s.beginTransaction();
 			log.info("Début enregistrement réservation");
-			
+
 			Vol v = s.get(Vol.class, Integer.parseInt(request.getParameter("numVol")));
-			
+
 			if (v != null && v.getoFreservation().equals("ouvert")) {
 
 				Reservation r1 = new Reservation(LocalDate.now());
-				r1.setClient(s.get(Client.class, Integer.parseInt(request.getParameter("idClient"))));
-				r1.setPassager(s.get(Passager.class, Integer.parseInt(request.getParameter("idPassager"))));
 				r1.setVol(s.get(Vol.class, Integer.parseInt(request.getParameter("numVol"))));
 
-				s.save(r1);
+				if (request.getParameter("pc").equals("passager")) {
+					Passager p = new Passager(request.getParameter("nom"), request.getParameter("prenom"));
+					r1.setPassager(p);
+					s.save(p);
+					s.save(r1);
+				} else {
+					Client c = s.get(Client.class,Integer.parseInt(request.getParameter("idClient")));
+					if (c != null) {
+						r1.setClient(c);
+						s.save(r1);
+					} else {
+						log.error("Id client inconnu");
+						s.getTransaction().rollback();
+					}
+				}
 				s.getTransaction().commit();
 			} else {
 				log.error("vol indisponible");
