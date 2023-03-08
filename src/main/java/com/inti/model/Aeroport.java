@@ -16,7 +16,7 @@ public class Aeroport {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idAeroport;
 	private String nom;
-	private String testGithub;
+	
 	
 	@ManyToOne
 	@JoinColumn(name="idVille")
@@ -30,6 +30,12 @@ public class Aeroport {
 		this.nom = nom;
 	}
 	
+	
+	public Aeroport(String nom, Ville ville) {
+		super();
+		this.nom = nom;
+		this.ville = ville;
+	}
 	public int getIdAeroport() {
 		return idAeroport;
 	}
