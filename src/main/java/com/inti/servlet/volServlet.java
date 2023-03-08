@@ -2,6 +2,8 @@ package com.inti.servlet;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -53,8 +55,10 @@ public class volServlet extends HttpServlet {
 			Vol v1 = new Vol (LocalDate.parse(request.getParameter("dateD")),request.getParameter("heureD"), 
 					LocalDate.parse(request.getParameter("dateA")), request.getParameter("heureA"));
 			
+			
+			
 			s.save(v1);
-
+			
 			
 			s.getTransaction().commit();
 		}

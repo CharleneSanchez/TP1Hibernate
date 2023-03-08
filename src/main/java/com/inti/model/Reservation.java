@@ -1,6 +1,7 @@
 package com.inti.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,6 +20,7 @@ public class Reservation {
 	private int idReservation;
 	private LocalDate date;
 	private int numero;
+	
 	
 	@ManyToOne
 	@JoinColumn(name="idClient")

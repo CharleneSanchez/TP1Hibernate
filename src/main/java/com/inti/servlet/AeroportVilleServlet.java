@@ -12,7 +12,6 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 
 import com.inti.model.Aeroport;
-import com.inti.model.CompagnieAerienne;
 import com.inti.model.Ville;
 import com.inti.util.HibernateUtil;
 
