@@ -27,6 +27,14 @@
 			<input type="text" name="heureD" class="form-control"id="exampleInputPassword1">
 		</div>
 		<div class="mb-3">
+			<label for="aeroportD" class="form-label">ID Aeroport de départ :</label>
+			<input type="text" name="aeroportD" class="form-control">
+		</div>
+		<div class="mb-3">
+			<label for="aeroportA" class="form-label">ID Aeroport d'arrivé :</label>
+			<input type="text" name="aeroportA" class="form-control">
+		</div>
+		<div class="mb-3">
 			<label for="exampleInputPassword1" class="form-label">Date d'arrivée </label>
 			<input type="date" name="dateA" class="form-control"id="exampleInputPassword1">
 		</div>

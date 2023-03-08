@@ -38,8 +38,12 @@ public class Vol {
 	private List<Reservation> listeReservation;
 
 	@ManyToOne
-	@JoinColumn(name = "idAeroport")
+	@JoinColumn(name = "idAeroportDepart")
 	private Aeroport aeroportDepart;
+	
+	@ManyToOne
+	@JoinColumn(name = "idAeroportAr")
+	private Aeroport aeroportAr;
 
 	public Vol() {
 		super();
@@ -153,6 +157,20 @@ public class Vol {
 	 */
 	public void setoFreservation(String oFreservation) {
 		this.oFreservation = oFreservation;
+	}
+
+	/**
+	 * @return the aeroportAr
+	 */
+	public Aeroport getAeroportAr() {
+		return aeroportAr;
+	}
+
+	/**
+	 * @param aeroportAr the aeroportAr to set
+	 */
+	public void setAeroportAr(Aeroport aeroportAr) {
+		this.aeroportAr = aeroportAr;
 	}
 
 }
